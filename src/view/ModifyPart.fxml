@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyPartController">
+    <HBox layoutX="60.0" layoutY="37.0" prefHeight="25.0" prefWidth="280.0" spacing="25.0">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modify Part">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Text>
+        <RadioButton fx:id="inHouseRadioButton" mnemonicParsing="false" onAction="#inHouseRadioButton" text="In-House">
+            <toggleGroup>
+                <ToggleGroup fx:id="partLocationToggle" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="outsourcedRadioButton" mnemonicParsing="false" onAction="#outsourcedRadioButton" text="Outsourced" toggleGroup="$partLocationToggle" />
+    </HBox>
+    <HBox layoutX="60.0" layoutY="99.0" prefHeight="192.0" prefWidth="253.0">
+        <VBox alignment="CENTER_LEFT" prefHeight="192.0" prefWidth="229.0" spacing="16.0" HBox.hgrow="ALWAYS">
+            <padding>
+                <Insets left="4.0" top="1.0" />
+            </padding>
+            <HBox.margin>
+                <Insets />
+            </HBox.margin>
+            <Label prefHeight="17.0" prefWidth="16.0" text="ID" />
+            <Label text="Name" />
+            <Label text="Inv" />
+            <Label text="Price/Cost" />
+            <Label text="Max" />
+            <Label fx:id="machineIdLabel" text="Machine ID" />
+        </VBox>
+        <VBox prefHeight="192.0" prefWidth="253.0" spacing="8.0">
+            <TextField fx:id="modifyPartIdText" disable="true" editable="false" focusTraversable="false" text="Auto Gen - Disabled" />
+            <TextField fx:id="modifyPartNameText" />
+            <TextField fx:id="modifyPartInventoryText" />
+            <TextField fx:id="modifyPartPriceText" />
+            <TextField fx:id="modifyPartMaxText" />
+            <TextField fx:id="modifyPartMachineIdText" />
+        </VBox>
+    </HBox>
+    <HBox layoutX="278.0" layoutY="318.0" prefHeight="54.0" prefWidth="149.0" spacing="20.0">
+        <Button mnemonicParsing="false" onAction="#onActionUpdatePart" text="Save" />
+        <Button mnemonicParsing="false" onAction="#onActionCancel" text="Cancel" />
+    </HBox>
+    <HBox alignment="CENTER" layoutX="340.0" layoutY="219.0" prefHeight="47.0" prefWidth="200.0" spacing="19.0">
+        <Label text="Min" />
+        <TextField fx:id="modifyPartMinText" />
+    </HBox>
+</AnchorPane>
